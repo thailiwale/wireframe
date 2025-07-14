@@ -1,0 +1,46 @@
+import React, { useState } from 'react';
+
+function Dispatch() {
+  const [form, setForm] = useState({
+    bagType: '',
+    quantity: '',
+    clientName: '',
+    dispatchDate: '',
+    scrapIfAny: '',
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert('Dispatch recorded!');
+    console.log(form);
+    setForm({
+      bagType: '',
+      quantity: '',
+      clientName: '',
+      dispatchDate: '',
+      scrapIfAny: '',
+    });
+  };
+
+  return (
+    <div>
+      <h2 className="text-2xl font-bold mb-6">Dispatch / Packing</h2>
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" name="bagType" placeholder="Bag Type (W-Cut / D-Cut)" value={form.bagType} onChange={handleChange} className="border p-2 rounded" />
+        <input type="number" name="quantity" placeholder="Quantity Dispatched" value={form.quantity} onChange={handleChange} className="border p-2 rounded" />
+        <input type="text" name="clientName" placeholder="Client Name" value={form.clientName} onChange={handleChange} className="border p-2 rounded" />
+        <input type="date" name="dispatchDate" value={form.dispatchDate} onChange={handleChange} className="border p-2 rounded" />
+        <input type="text" name="scrapIfAny" placeholder="Scrap (if any)" value={form.scrapIfAny} onChange={handleChange} className="border p-2 rounded" />
+        <button type="submit" className="md:col-span-2 bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
+          Record Dispatch
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default Dispatch;

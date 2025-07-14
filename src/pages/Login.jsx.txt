@@ -1,0 +1,36 @@
+import React from 'react';
+
+function Login() {
+  return (
+    <div className="max-w-md mx-auto mt-20 p-6 border shadow-md rounded-lg">
+      <h2 className="text-2xl font-bold mb-4 text-center">Login - Thailiwale.com</h2>
+      <form className="space-y-4">
+        <div>
+          <label className="block font-medium">Email</label>
+          <input type="email" className="w-full border p-2 rounded" placeholder="you@example.com" />
+        </div>
+        <div>
+          <label className="block font-medium">Password</label>
+          <input type="password" className="w-full border p-2 rounded" placeholder="Enter password" />
+        </div>
+        <div>
+          <label className="block font-medium">Role</label>
+          <select className="w-full border p-2 rounded">
+            <option>Admin</option>
+            <option>Sales</option>
+            <option>Production</option>
+            <option>Flexo</option>
+            <option>Bag Making</option>
+            <option>Offset</option>
+            <option>Dispatch</option>
+          </select>
+        </div>
+        <button type="submit" className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">
+          Login
+        </button>
+      </form>
+    </div>
+  );
+}
+
+export default Login;

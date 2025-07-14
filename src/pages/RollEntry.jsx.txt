@@ -1,0 +1,34 @@
+import React, { useState } from 'react';
+
+function RollEntry() {
+  const [form, setForm] = useState({
+    rollSize: '',
+    gsm: '',
+    color: '',
+    weight: '',
+    operator: '',
+  });
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert('Roll entry saved!');
+    console.log(form);
+    setForm({
+      rollSize: '',
+      gsm: '',
+      color: '',
+      weight: '',
+      operator: '',
+    });
+  };
+
+  return (
+    <div>
+      <h2 className="text-2xl font-bold mb-6">Roll Entry</h2>
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" name="r
+
