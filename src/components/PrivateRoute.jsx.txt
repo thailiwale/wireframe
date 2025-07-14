@@ -1,0 +1,16 @@
+import React from 'react';
+import { Navigate } from 'react-router-dom';
+import roles from '../data/roles';
+
+const PrivateRoute = ({ children, page }) => {
+  const role = localStorage.getItem('role');
+
+  // If no role is found or page is not allowed for this role
+  if (!role || !roles[role]?.includes(page)) {
+    return <Navigate to="/" />; // Redirect to login
+  }
+
+  return children; // Access granted
+};
+
+export default PrivateRoute;

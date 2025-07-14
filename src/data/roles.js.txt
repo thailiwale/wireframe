@@ -1,0 +1,11 @@
+const roles = {
+  admin: ['Dashboard', 'RollEntry', 'Flexo', 'BagMaking', 'Dispatch'],
+  operator: ['Flexo', 'BagMaking', 'RollEntry'],
+  sales: ['Dispatch', 'Dashboard'],
+  production: ['RollEntry', 'Dashboard'],
+  flexo: ['Flexo'],
+  offset: ['Offset'],
+  delivery: ['Dispatch']
+};
+
+export default roles;
